@@ -9,7 +9,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "com.test.Runner",
-            "vmArgs": "--module-path C:/Users/TOMÁS/Downloads/javafx-sdk-23.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path ${workspaceFolder}/gestiongastos/target/dependency --add-modules javafx.controls,javafx.fxml",
         }
     ]
 }
