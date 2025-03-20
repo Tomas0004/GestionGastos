@@ -11,7 +11,7 @@ public class IOHandler {
 
     public static String readerFile(String path) throws FileNotFoundException, IOException {
         BufferedReader reader = new BufferedReader(new FileReader(path));
-        String text = "";
+        String text ="";
         String line = "";
 
         line = reader.readLine();
