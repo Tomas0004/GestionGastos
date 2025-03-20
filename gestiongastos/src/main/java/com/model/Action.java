@@ -25,4 +25,9 @@ public class Action {
     public int getAmountMoved() {
         return amountMoved;
     }
+
+    @Override
+    public String toString() {
+        return "Action [date=" + date + ", hour=" + hour + ", amountMoved=" + amountMoved + "]";
+    }
 }
