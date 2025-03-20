@@ -8,6 +8,20 @@
     <artifactId>gestiongastos</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.co dehaus.mojo</groupId> 
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+            </plugin> 
+        </plugins>
+        <configuration>
+          <mainClass>com.test.Runner</mainClass>
+        </configuration>
+    </build>
+
+
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -20,7 +34,6 @@
             <artifactId>json</artifactId>
             <version>20250107</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
         <dependency>
@@ -62,7 +75,12 @@
             <version>23.0.2</version>
         </dependency>
 
-        
+        <!-- https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>3.2.0</version>
+        </dependency>
 
     </dependencies>
 
