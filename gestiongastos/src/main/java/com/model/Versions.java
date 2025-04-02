@@ -3,20 +3,15 @@ package com.model;
 import java.util.ArrayList;
 
 public class Versions {
-    private ArrayList<User> versions = new ArrayList<>();
+    private static ArrayList<ArrayList<User>> versionsUsers = new ArrayList<>();
 
     public Versions(){}
 
-    public ArrayList<User> getVersions(){
-        return versions;
+    public static ArrayList<ArrayList<User>> getVersions(){
+        return versionsUsers;
     }
 
-    public void setVersions(ArrayList<User> versions){
-        this.versions = versions;
-    }
-
-    @Override
-    public String toString() {
-        return "Versions [versions=" + versions + "]";
+    public static void addVersionsToUser(ArrayList<User> versions){
+        versionsUsers.add(versions);
     }
 }

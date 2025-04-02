@@ -1,33 +1,34 @@
 package com.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Action {
-    private LocalDate date;
-    private LocalTime hour;
+    private LocalDateTime dateTime;
     private int amountMoved;
-
-    public Action(LocalDate date, LocalTime hour, int amountMoved) {
-        this.date = date;
-        this.hour = hour;
+    
+    public Action(LocalDateTime dateTime, int amountMoved) {
+        this.dateTime = dateTime;
         this.amountMoved = amountMoved;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
-    public LocalTime getHour() {
-        return hour;
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public int getAmountMoved() {
         return amountMoved;
     }
 
+    public void setAmountMoved(int amountMoved) {
+        this.amountMoved = amountMoved;
+    }
+
     @Override
     public String toString() {
-        return "Action [date=" + date + ", hour=" + hour + ", amountMoved=" + amountMoved + "]";
+        return "Action [dateTime=" + dateTime + ", amountMoved=" + amountMoved + "]";
     }
 }
