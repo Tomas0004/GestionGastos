@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderpane" stylesheets="@LogIn.css" xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/11.0.1" prefHeight="600.0" prefWidth="1000.0">
+    <AnchorPane>
+        <children>
+            <VBox fx:id="vbox" layoutX="300" layoutY="200" prefHeight="200.0" prefWidth="500.0" pickOnBounds="true">
+                <Label text="Log In" padding="20" />
+                <TextField fx:id="usernameField" promptText="Username" />
+                <PasswordField fx:id="passwordField" promptText="Password" />
+                <Button fx:id="loginButton" text="Log In" />
+            </VBox>
+        </children>
+    </AnchorPane>
+</BorderPane>
