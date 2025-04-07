@@ -2,6 +2,7 @@ com\model\Constants.class
 com\model\IOHandler.class
 com\model\Versions.class
 com\model\JSONHandler$2.class
+com\view\LogInController.class
 com\test\Runner.class
 com\model\Action.class
 com\model\JSONHandler$1.class

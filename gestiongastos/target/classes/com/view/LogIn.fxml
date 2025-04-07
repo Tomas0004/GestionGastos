@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
 
-<BorderPane fx:id="borderpane" stylesheets="@LogIn.css" xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/11.0.1" prefHeight="600.0" prefWidth="1000.0">
-    <AnchorPane>
-        <children>
-            <VBox fx:id="vbox" layoutX="300" layoutY="200" prefHeight="200.0" prefWidth="500.0" pickOnBounds="true">
-                <Label text="Log In" padding="20" />
-                <TextField fx:id="usernameField" promptText="Username" />
-                <PasswordField fx:id="passwordField" promptText="Password" />
-                <Button fx:id="loginButton" text="Log In" />
-            </VBox>
-        </children>
-    </AnchorPane>
+<BorderPane fx:id="borderpane" stylesheets="@LogIn.css" xmlns:fx="http://javafx.com/fxml"
+    xmlns="http://javafx.com/javafx/11.0.1" prefHeight="600.0" prefWidth="1000.0"
+    fx:controller="com.view.LogInController">
+    <center>
+        <AnchorPane>
+            <children>
+                <Region prefHeight="200.0" prefWidth="1000.0" />
+                <Label fx:id="TITLE" layoutX="200" layoutY="50" text="SISTEMA DE GESTION DE GASTOS" />
+                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+                    minHeight="-Infinity" minWidth="-Infinity" fx:id="vbox" layoutX="280"
+                    layoutY="200" prefHeight="250.0" prefWidth="500.0" pickOnBounds="true">
+                    <Label text="INICIO DE SESION" fx:id="title" layoutY="-20" />
+                    <VBox alignment="CENTER">
+                        <GridPane alignment="center" hgap="10" vgap="10">
+                            <Label text="Usuario:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <TextField fx:id="usernameField" promptText="Nombre de usuario"
+                                prefWidth="400" maxWidth="300" GridPane.rowIndex="0"
+                                GridPane.columnIndex="1" />
+                            <Label text="Contraseña:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <PasswordField fx:id="passwordField" promptText="Contraseña"
+                                prefWidth="400" maxWidth="300" GridPane.rowIndex="1"
+                                GridPane.columnIndex="1" />
+                        </GridPane>
+                    </VBox>
+                    <Button text="Iniciar sesion" layoutX="20" prefWidth="150.0" prefHeight="30.0" />
+                    <VBox prefHeight="60" maxHeight="60" minHeight="60">
+                        <Hyperlink text="¿No tienes cuenta? Regístrate aquí"
+                            prefWidth="300.0" onAction="#signIn" />
+                    </VBox>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </center>
 </BorderPane>

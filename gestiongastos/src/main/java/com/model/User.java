@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class User{
     private String password;
-    private String username;
+    private String username; //this field is permanent
     public String name;
     private int amountLeft;
     private ArrayList<Action> actions;

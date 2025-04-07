@@ -11,7 +11,25 @@ public class Versions {
         return versionsUsers;
     }
 
-    public static void addVersionsToUser(ArrayList<User> versions){
+    public static void addVersionsUser(ArrayList<User> versions){
         versionsUsers.add(versions);
+    }
+
+    public static ArrayList<User> findVersionsUser(String username){
+        try {
+            return versionsUsers.stream().filter(versions -> versions.getFirst().getUsername().equals(username)).findFirst().orElse(null);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static boolean addVersionToUser(User version, String username){
+        if(findVersionsUser(username) == null){
+            return false;
+        }else{
+            versionsUsers.get(versionsUsers.indexOf(findVersionsUser(username))).add(version);
+            return true;
+        }
+
     }
 }

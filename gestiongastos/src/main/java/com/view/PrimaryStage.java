@@ -1,5 +1,7 @@
 package com.view;
 
+import java.io.IOException;
+
 import com.model.Constants;
 
 import javafx.application.Application;
@@ -15,16 +17,21 @@ public class PrimaryStage extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         stg = primaryStage;
-        stg.setResizable(false);
+        primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
-        stg.setTitle("Gestion de gastos");
+        primaryStage.setTitle("Gestion de gastos");
         System.out.println(Font.getFamilies());
-        stg.setScene(new Scene(root, Constants.WIDTH, Constants.HEIGHT));
-        stg.show();
+        primaryStage.setScene(new Scene(root, Constants.WIDTH, Constants.HEIGHT));
+        primaryStage.show();
     }
 
     public static void startUI(){
         launch();
+    }
+
+    public void changeScene(String fxml) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+        stg.getScene().setRoot(root);
     }
 
 }
