@@ -55,7 +55,7 @@ Button:pressed{
 
 #back{
     -fx-background-color: transparent;
-    -fx-border-radius: none;
+    -fx-background-radius: 0;
 }
 
 #back:hover{
