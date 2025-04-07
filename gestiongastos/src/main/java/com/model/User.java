@@ -66,6 +66,10 @@ public class User{
         return actions;
     }
 
+    public void setActions(ArrayList<Action> actions) {
+        this.actions = actions;
+    }
+
     @Override
     public String toString() {
         return "User [password=" + password + ", username=" + username + ", name=" + name + ", amountLeft=" + amountLeft

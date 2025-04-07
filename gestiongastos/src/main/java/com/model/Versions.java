@@ -11,16 +11,29 @@ public class Versions {
         return versionsUsers;
     }
 
-    public static void addVersionsUser(ArrayList<User> versions){
-        versionsUsers.add(versions);
+    public static void setVersions(ArrayList<ArrayList<User>> versions){
+        versionsUsers = versions;
+    }
+
+    public static boolean addVersionsUser(ArrayList<User> versions){
+        if(findVersionsUser(versions.get(0).getUsername()) == null){
+            versionsUsers.add(versions);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static ArrayList<User> findVersionsUser(String username){
-        try {
-            return versionsUsers.stream().filter(versions -> versions.getFirst().getUsername().equals(username)).findFirst().orElse(null);
-        } catch (Exception e) {
-            return null;
+        for(ArrayList<User> user : versionsUsers){
+            try {
+                if(user.get(0).getUsername().equals(username)){
+                    return user;
+                }
+            } catch (IndexOutOfBoundsException e) {}
         }
+
+        return null;
     }
 
     public static boolean addVersionToUser(User version, String username){

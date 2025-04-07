@@ -16,10 +16,9 @@ public class IOHandler {
 
         line = reader.readLine();
         while (line != null) {
-            text = text + line + "\n";
+            text = text + line;
             line = reader.readLine();
         }
-        text = text.substring(0, text.length() - 1);
 
         reader.close();
         

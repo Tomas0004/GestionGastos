@@ -12,33 +12,34 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonDeserializer;
+import com.google.gson.reflect.TypeToken;
 
 public class JSONHandler {
     private static Gson gson = new GsonBuilder()
-    .registerTypeAdapter(LocalDateTime.class, new JsonSerializer<LocalDateTime>() {
+            .registerTypeAdapter(LocalDateTime.class, new JsonSerializer<LocalDateTime>() {
 
-        @Override
-        public JsonElement serialize(LocalDateTime src, Type typeOfSrc, JsonSerializationContext context) {
-            return new JsonPrimitive(src.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-        }
-        
-        
-    })
-    .registerTypeAdapter(LocalDateTime.class, new JsonDeserializer<LocalDateTime>(){
+                @Override
+                public JsonElement serialize(LocalDateTime src, Type typeOfSrc, JsonSerializationContext context) {
+                    return new JsonPrimitive(src.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+                }
 
-        @Override
-        public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) {
+            })
+            .registerTypeAdapter(LocalDateTime.class, new JsonDeserializer<LocalDateTime>() {
+
+                @Override
+                public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) {
                     return LocalDateTime.parse(json.getAsString(), DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-        }
-        
-    }).create();
+                }
+
+            }).create();
 
     public static String ArrayListVersionsToStringJSON(ArrayList<ArrayList<User>> versionsUsers) {
         return gson.toJson(versionsUsers);
     }
 
     public static ArrayList<ArrayList<User>> StringJSONToArrayListVersions(String stringJSON) {
-        return gson.fromJson(stringJSON, Versions.getVersions().getClass());
+        Type type = new TypeToken<ArrayList<ArrayList<User>>>() {}.getType();
+        return gson.fromJson(stringJSON, type);
     }
 
 }
