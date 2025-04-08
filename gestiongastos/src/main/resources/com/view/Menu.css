@@ -1,0 +1,17 @@
+BorderPane{
+    -fx-background-color: #45c745;
+}
+
+Button{
+    -fx-background-radius: 0;
+    -fx-background-color: #229222;
+    -fx-text-fill: white; 
+    -fx-font-size: 20; 
+    -fx-padding: 64 0; 
+    -fx-pref-width: 400;
+    -fx-font-family: "Arial";
+}
+
+Button:hover{
+    -fx-background-color: #25a825; 
+}

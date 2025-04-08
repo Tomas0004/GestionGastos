@@ -20,6 +20,7 @@ public class PrimaryStage extends Application {
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         primaryStage.setTitle("Gestion de gastos");
+        primaryStage.getIcons().add(Constants.ICON);
         System.out.println(Font.getFamilies());
         primaryStage.setScene(new Scene(root, Constants.WIDTH, Constants.HEIGHT));
         primaryStage.show();

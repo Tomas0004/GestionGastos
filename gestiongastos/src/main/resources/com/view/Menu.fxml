@@ -3,15 +3,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.view.MenuController">
+<BorderPane stylesheets="@Menu.css" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.view.MenuController">
     <left>
-        <VBox alignment="TOP_LEFT" prefHeight="600.0" prefWidth="1000.0" stylesheets="@Menu.css">
-            <children>
-                <Label text="SISTEMA DE GESTION DE GASTOS" fx:id="TITLE" />
-                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" fx:id="vbox">
-                    
-                </VBox>
-            </children>
+        <VBox alignment="center" maxHeight="-Infinity" prefHeight="600" prefWidth="300.0">
+            <GridPane maxHeight="600">
+                <Button text="ACCION" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                    GridPane.valignment="CENTER" onAction="#action" fx:id="action"/>
+                <Button text="VERSIONES DE CUENTA" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                    GridPane.valignment="CENTER" onAction="#accountVersions" fx:id="accountVersions"/>
+                <Button text="GRAFICA DE GASTOS" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                    GridPane.valignment="CENTER" onAction="#graphic" fx:id="graphic"/>
+                <Button text="SALIR" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                    GridPane.valignment="CENTER" onAction="#logOut" fx:id="logOut"/>
+            </GridPane>
         </VBox>
     </left>
+    <center>
+        <VBox fx:id="vbox" alignment="center" maxHeight="-Infinity" prefHeight="600"
+            prefWidth="600.0">
+
+        </VBox>
+    </center>
 </BorderPane>

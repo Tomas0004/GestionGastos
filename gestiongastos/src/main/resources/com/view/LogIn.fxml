@@ -20,11 +20,11 @@
                             <Label text="INICIO DE SESION" fx:id="title" layoutY="-20" 
                                 GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2" />
                             <Label text="Usuario:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-                            <TextField fx:id="username" promptText="Nombre de usuario"
+                            <TextField fx:id="username" text="Tomas" promptText="Nombre de usuario"
                                 prefWidth="400" maxWidth="300" GridPane.rowIndex="1"
                                 GridPane.columnIndex="1" onAction="#advance" />
                             <Label text="Contraseña:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-                            <PasswordField fx:id="password" promptText="Contraseña"
+                            <PasswordField fx:id="password" text="131" promptText="Contraseña"
                                 prefWidth="400" maxWidth="300" GridPane.rowIndex="2"
                                 GridPane.columnIndex="1" onAction="#advance"/>
                             <Label fx:id="msg" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
