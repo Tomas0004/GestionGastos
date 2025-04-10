@@ -1,0 +1,38 @@
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:id="content" alignment="center" maxHeight="-Infinity"
+    maxWidth="-Infinity" prefHeight="800" prefWidth="800.0" stylesheets="@styles/MenuAction.css" 
+    fx:controller="com.view.MenuActionController">
+    <GridPane vgap="10" hgap="20" alignment="center">
+        <Label fx:id="title" text="Estaditicas:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+        <Label text="Nombre de usuario:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="username" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Contraseña:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="password" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="name" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Cantidad actual:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Label fx:id="amountLeft" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Acciones:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="combobox" prefWidth="200" GridPane.rowIndex="1" GridPane.columnIndex="3">
+            <items>
+                <FXCollections fx:id="fxcollections" fx:factory="observableArrayList">
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Label fx:id="actions" GridPane.rowIndex="2" GridPane.columnIndex="2" GridPane.columnSpan="2"/>
+
+        <Label text="Añadir movimiento:" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+        <TextField fx:id="move" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+        <Label fx:id="result" GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#addAction"/>
+
+    </GridPane>
+</VBox>

@@ -1,16 +1,22 @@
 package com.view;
 
+import java.awt.Toolkit;
+import java.net.URL;
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
+import com.model.Constants;
 import com.model.Versions;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-public class LogInController {
+public class LogInController implements Initializable{
     @FXML
     private TextField username;
 
@@ -39,6 +45,8 @@ public class LogInController {
                     return;
                 }
             }
+
+            MenuController.setCurrentUser(Versions.findVersionsUser(user));
 
             PrimaryStage primaryStage = new PrimaryStage();
             primaryStage.changeScene("Menu.fxml");
@@ -78,6 +86,13 @@ public class LogInController {
             primaryStage.changeScene("SignIn.fxml");
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(Toolkit.getDefaultToolkit().getScreenSize().getHeight() < Constants.HEIGHT){
+            Stage.getWindows().getFirst().setHeight(Toolkit.getDefaultToolkit().getScreenSize().getHeight());
         }
     }
 }

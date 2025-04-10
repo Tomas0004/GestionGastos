@@ -1,0 +1,20 @@
+ComboBox{
+    -fx-outer-border: transparent;
+    -fx-inner-border: transparent;
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, #93f18a;
+    -fx-background-radius: 10;
+    -fx-background-insets: 0, 0, 0, 0;
+}
+
+Label{
+    -fx-font-family: "Arial";
+    -fx-font-size: 19;
+    -fx-text-fill: #000000;
+}
+
+#title{
+    -fx-font-family: "Arial";
+    -fx-font-size: 20;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}

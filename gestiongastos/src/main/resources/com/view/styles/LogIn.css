@@ -1,6 +1,9 @@
-#borderpane{
-    -fx-background-image: url("build.JPG");
+#scrollpane{
     -fx-font-family: "Arial";
+}
+
+BorderPane{
+    -fx-background-image: url("../images/build.JPG");
 }
 
 #vbox{

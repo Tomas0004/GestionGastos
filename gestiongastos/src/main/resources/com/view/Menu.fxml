@@ -3,26 +3,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane stylesheets="@Menu.css" xmlns:fx="http://javafx.com/fxml"
+<ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" stylesheets="@styles/Menu.css"
+    xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.view.MenuController">
-    <left>
-        <VBox alignment="center" maxHeight="-Infinity" prefHeight="600" prefWidth="300.0">
-            <GridPane maxHeight="600">
-                <Button text="ACCION" GridPane.columnIndex="0" GridPane.rowIndex="1"
-                    GridPane.valignment="CENTER" onAction="#action" fx:id="action"/>
-                <Button text="VERSIONES DE CUENTA" GridPane.columnIndex="0" GridPane.rowIndex="2"
-                    GridPane.valignment="CENTER" onAction="#accountVersions" fx:id="accountVersions"/>
-                <Button text="GRAFICA DE GASTOS" GridPane.columnIndex="0" GridPane.rowIndex="3"
-                    GridPane.valignment="CENTER" onAction="#graphic" fx:id="graphic"/>
-                <Button text="SALIR" GridPane.columnIndex="0" GridPane.rowIndex="4"
-                    GridPane.valignment="CENTER" onAction="#logOut" fx:id="logOut"/>
-            </GridPane>
-        </VBox>
-    </left>
-    <center>
-        <VBox fx:id="vbox" alignment="center" maxHeight="-Infinity" prefHeight="600"
-            prefWidth="600.0">
-
-        </VBox>
-    </center>
-</BorderPane>
+    <BorderPane fx:id="borderPane">
+        <left>
+            <VBox alignment="top_left" maxHeight="-Infinity" prefHeight="600"
+                prefWidth="300">
+                <GridPane maxHeight="600" prefWidth="400.0" maxWidth="400.0">
+                    <Button text="ACCION" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                        GridPane.valignment="CENTER" onAction="#action" fx:id="action" />
+                    <Button text="VERSIONES DE CUENTA" GridPane.columnIndex="0"
+                        GridPane.rowIndex="2"
+                        GridPane.valignment="CENTER" onAction="#accountVersions"
+                        fx:id="accountVersions" />
+                    <Button text="GRAFICA DE GASTOS" GridPane.columnIndex="0"
+                        GridPane.rowIndex="3"
+                        GridPane.valignment="CENTER" onAction="#graphic" fx:id="graphic" />
+                    <Button text="SALIR" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                        GridPane.valignment="CENTER" onAction="#logOut" fx:id="logOut" />
+                </GridPane>
+            </VBox>
+        </left>
+        <center>
+        </center>
+        <bottom>
+            <VBox fx:id="footer" alignment="center" maxHeight="-Infinity" prefHeight="10"
+                prefWidth="600.0">
+                <Label text="Bienvenido a la aplicacion de gestion de gastos" />
+            </VBox>
+        </bottom>
+    </BorderPane>
+</ScrollPane>

@@ -22,7 +22,7 @@ public class Runner{
         }
         PrimaryStage.startUI();
     }
-
+    
     private static void setup() throws FileNotFoundException, IOException{
         Versions.setVersions(JSONHandler.StringJSONToArrayListVersions(Encryption.decrypt(IOHandler.readerFile(Constants.PATH_DEST_CREATE))));
     }

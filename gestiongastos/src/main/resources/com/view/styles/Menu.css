@@ -1,4 +1,8 @@
-BorderPane{
+#footer{
+    -fx-background-color: #37a137;
+}
+
+#content{
     -fx-background-color: #45c745;
 }
 

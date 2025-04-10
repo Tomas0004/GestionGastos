@@ -4,6 +4,10 @@ BorderPane{
     -fx-font-size: 15;
 }
 
+VBox{
+    -fx-background-color: transparent;
+}
+
 GridPane *{
     -fx-padding: 10;
 }

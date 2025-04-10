@@ -1,8 +1,11 @@
 package com.view;
 
+import java.awt.Toolkit;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
 import com.model.Constants;
 import com.model.Encryption;
@@ -12,14 +15,15 @@ import com.model.User;
 import com.model.Versions;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-public class SignInController {
+public class SignInController implements Initializable{
     @FXML
     private TextField username, name, amountLeft;
 
@@ -28,9 +32,6 @@ public class SignInController {
 
     @FXML
     Label uMsg, pMsg, nMsg, aMsg;
-
-    @FXML
-    GridPane gridPane;
 
     public void signIn() {
         clearMessages();
@@ -124,6 +125,13 @@ public class SignInController {
             new PrimaryStage().changeScene("Login.fxml");
         } catch (IOException e) {
             System.err.println("Error al cambiar de escena: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(Toolkit.getDefaultToolkit().getScreenSize().getHeight() < Constants.HEIGHT){
+            Stage.getWindows().getFirst().setHeight(Toolkit.getDefaultToolkit().getScreenSize().getHeight());
         }
     }
 }

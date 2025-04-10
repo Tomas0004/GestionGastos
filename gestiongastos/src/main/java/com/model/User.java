@@ -9,6 +9,8 @@ public class User{
     private int amountLeft;
     private ArrayList<Action> actions;
 
+    public User(){}
+
     public User(String password, String username, String name, int amountLeft) {
         this.password = password;
         this.username = username;
